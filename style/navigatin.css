@@ -16,7 +16,7 @@
     font-size: 18px;
     line-height: 130%;
     letter-spacing: 0.04em;
-    color: var(--seocond-color);
+    color: var(--second-color);
     position: relative;
 }
 .navigation__link::before {

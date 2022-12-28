@@ -1,5 +1,5 @@
 .header {
-    color: var(--seocond-color);
+    color: var(--second-color);
     padding: 27px 0;
 }
 .header__container {
@@ -36,7 +36,7 @@
     box-shadow: 0px 2px 6px rgba(2, 67, 52, 0.36);
 }
 .header__consultation:focus {
-    outline-color: var(--seocond-color);
+    outline-color: var(--second-color);
     outline-width: 2px;
 }
 @media (max-width: 1440px) {
