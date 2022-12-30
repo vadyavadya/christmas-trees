@@ -1,4 +1,4 @@
-const createSnow = () => {
+const createSnow = (min, max, minRotate, maxRotate, seturation) => {
     const style = document.createElement('style');
 
     style.textContent = `
@@ -40,13 +40,10 @@ const createSnow = () => {
             top:${document.body.clientHeight}px;
         }
     }
-    
-    
 
 `;
 
     document.head.append(style);
-
 
     let start = 1;
     const count = 4;
@@ -54,15 +51,10 @@ const createSnow = () => {
     const createSnowItem = () => {
         const snowItem = document.createElement('div');
 
-        let speedFill = 10;
 
-        let speedRotatae = 10;
+        let documentHeight = document.body.clientHeight / window.innerHeight;
 
-        let countHeight = document.body.clientHeight / window.innerHeight;
-
-        let summSpeed = speedFill * countHeight;
-
-        let finalSpeed = summSpeed / 2 + summSpeed / 2 * Math.random();
+        let finalSpeed = (min + (max - min) * Math.random()) * documentHeight;
 
         snowItem.classList.add('snow');
 
@@ -71,7 +63,7 @@ const createSnow = () => {
         snowItem.style.cssText = `
             left: ${Math.random() * window.innerWidth - 60}px;
             background-image: url("snow/snowflake${start}.svg");
-            animation-duration: ${finalSpeed}s, ${Math.random() * speedRotatae + speedRotatae}s;
+            animation-duration: ${finalSpeed}s, ${Math.random() * (maxRotate - minRotate) + minRotate}s;
             opacity: ${Math.random()};
         `;
 
@@ -85,11 +77,9 @@ const createSnow = () => {
             snowItem.remove();
         }, finalSpeed * 1000);
     }
-
-    setInterval(createSnowItem, 100);
-
-
+    //* появление новых через 100ms
+    setInterval(createSnowItem, seturation);
 }
 
-
-createSnow();
+//* мин и макс времени пробывание на экране, мин и мак время вращения, скорость появление новой снежинки 
+createSnow(5, 15, 10, 15, 100);
