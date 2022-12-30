@@ -58,7 +58,7 @@
     .header__burger {
         grid-row: 1;
         grid-column: 1;
-        justify-self: start;
+        justify-self: end;
     }
     .header__logo {
         grid-row: 1;
