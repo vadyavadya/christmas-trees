@@ -12,6 +12,11 @@ body {
     background-image: url("../images/christmas/elka.png");
     z-index: 499;
 }
+@media (max-width: 1000px) {
+    .header__burger {
+        justify-self: end;
+    }
+}
 
 .garlend {
     position: absolute;

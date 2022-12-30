@@ -28,7 +28,7 @@
 }
 
 .footer__link {
-    transition: color 0.3s ease 0s;
+    transition: transform 0.9s ease, color 0.3s ease 0s;
 }
 .footer__link:hover {
     color: var(--second-bg-color);
@@ -44,6 +44,9 @@
     display: block;
     width: 40px;
     height: 40px;
+}
+.footer__link_social:hover {
+    transform: rotateZ(30deg);
 }
 .footer__info-list {
 }

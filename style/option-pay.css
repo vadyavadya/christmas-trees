@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 35px;
+    /* padding: 35px; */
     color: var(--main-color);
     margin-bottom: 20px;
 }
@@ -30,7 +30,7 @@
 }
 @media (max-width: 1200px) {
     .option-pay__picture-wrapper {
-        padding: 25px;
+        /* padding: 25px; */
         min-height: 106px;
         margin-bottom: 15px;
     }
@@ -46,7 +46,7 @@
 }
 @media (max-width: 1000px) {
     .option-pay__picture-wrapper {
-        padding: 17px;
+        /* padding: 17px; */
         min-height: 73px;
         margin-bottom: 10px;
     }
