@@ -20,6 +20,7 @@ body {
     top: 0;
     left: 0;
     background-image: url("garlend/elka.png");
+    background-repeat: no-repeat;
     z-index: 499;
 }
 @media (max-width: 1000px) {
@@ -35,6 +36,7 @@ body {
     height: 36px;
     width: 100%;
     background-image: url("garlend/christmas.png");
+    background-repeat: repeatX;
     z-index: 500;
 }
 
