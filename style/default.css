@@ -43,12 +43,6 @@ body {
 h1,
 h2 {
     font-family: Cormorant, serif;
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 1;
-    letter-spacing: 0.01em;
-    color: var(--main-color);
-    /* margin: 0; */
 }
 .container {
     max-width: 1374px;
@@ -102,21 +96,3 @@ button {
     width: 1px;
     overflow: hidden;
 }
-
-
-
-/* 
-:root {
-    --main-color: #ffffff;
-    --second-color: #262626;
-    --one-color: #006e55;
-    --two-color: #00654e;
-    --three-color: #005844;
-    --main-bg-color: #005844;
-    --second-bg-color: #c0b487;
-    --trigger-color: #e6ab39;
-    --url-featres-one: url("../images/tree.svg");
-    --url-featres-two: url("../images/christmas-decorations.svg");
-    --url-featres-three: url("../images/flowers.svg");
-    --url-featres-four: url("../images/delivery-truck.svg");
-} */
