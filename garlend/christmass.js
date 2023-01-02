@@ -29,6 +29,12 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .christmas::before{
+        content: none;
+    }
+}
+
 .garlend {
     position: fixed;
     top: 0;

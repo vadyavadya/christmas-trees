@@ -1,6 +1,12 @@
 const createSnow = (min, max, minRotate, maxRotate, seturation) => {
     const style = document.createElement('style');
 
+    const body = document.body;
+    const html = document.documentElement;
+
+    var height = Math.max(body.scrollHeight, body.offsetHeight,
+        html.clientHeight, html.scrollHeight, html.offsetHeight) - 30;
+
     style.textContent = `
     body {
         position:relative;
@@ -37,12 +43,10 @@ const createSnow = (min, max, minRotate, maxRotate, seturation) => {
            top: -30px;
         }
         100% {
-            top:${document.body.clientHeight}px;
+            top:${height}px;
         }
     }
-
 `;
-
     document.head.append(style);
 
     let start = 1;
@@ -52,7 +56,7 @@ const createSnow = (min, max, minRotate, maxRotate, seturation) => {
         const snowItem = document.createElement('div');
 
 
-        let documentHeight = document.body.clientHeight / window.innerHeight;
+        let documentHeight = height / window.innerHeight;
 
         let finalSpeed = (min + (max - min) * Math.random()) * documentHeight;
 
@@ -62,6 +66,7 @@ const createSnow = (min, max, minRotate, maxRotate, seturation) => {
 
         snowItem.style.cssText = `
             left: ${Math.random() * window.innerWidth - 60}px;
+            // left: ${Math.random() * document.documentElement.clientWidth}px;
             background-image: url("snow/snowflake${start}.svg");
             animation-duration: ${finalSpeed}s, ${Math.random() * (maxRotate - minRotate) + minRotate}s;
             opacity: ${Math.random()};
@@ -81,5 +86,7 @@ const createSnow = (min, max, minRotate, maxRotate, seturation) => {
     setInterval(createSnowItem, seturation);
 }
 
-//* мин и макс времени пробывание на экране, мин и мак время вращения, скорость появление новой снежинки 
-createSnow(5, 15, 10, 15, 100);
+window.addEventListener('load', (event) => {
+    //* мин и макс времени пробывание на экране, мин и мак время вращения, скорость появление новой снежинки 
+    createSnow(5, 15, 10, 15, 100);
+});
