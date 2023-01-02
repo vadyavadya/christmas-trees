@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     display: none;
-    overflow-x: auto;
+    overflow-y: auto;
 }
 .overlay_active {
     display: flex;

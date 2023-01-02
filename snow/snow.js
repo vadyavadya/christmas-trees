@@ -25,7 +25,7 @@ const createSnow = (min, max, minRotate, maxRotate, seturation) => {
             transform: rotateX(0) rotateY(0) rotateZ(0);
         }
         50% {
-            transform: rotateX(360deg) rotateY(0) rotateZ(360deg);
+            transform: rotateX(80deg) rotateY(0) rotateZ(360deg);
         }
         100% {
             transform: rotateX(0) rotateY(0) rotateZ(0);
