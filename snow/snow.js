@@ -1,5 +1,8 @@
 const createSnow = (min, max, minRotate, maxRotate, seturation) => {
     const style = document.createElement('style');
+    const snowWrapper = document.createElement('div');
+    snowWrapper.classList.add('snow-wrapper');
+
 
     const body = document.body;
     const html = document.documentElement;
@@ -12,6 +15,15 @@ const createSnow = (min, max, minRotate, maxRotate, seturation) => {
         position:relative;
     }
     
+    .snow-wrapper {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
 
     .snow {
         width: 30px;
@@ -40,14 +52,15 @@ const createSnow = (min, max, minRotate, maxRotate, seturation) => {
 
     @keyframes fall {
         0% {
-           top: -30px;
+            top: -30px;
         }
         100% {
-            top:${height}px;
+            top:${height + 30}px;
         }
     }
 `;
     document.head.append(style);
+    document.body.append(snowWrapper);
 
     let start = 1;
     const count = 4;
@@ -62,11 +75,11 @@ const createSnow = (min, max, minRotate, maxRotate, seturation) => {
 
         snowItem.classList.add('snow');
 
-        document.body.append(snowItem);
+        snowWrapper.append(snowItem);
 
         snowItem.style.cssText = `
-            left: ${Math.random() * window.innerWidth - 60}px;
-            // left: ${Math.random() * document.documentElement.clientWidth}px;
+            // left: ${Math.random() * window.innerWidth - 60}px;
+            left: ${Math.random() * document.documentElement.clientWidth}px;
             background-image: url("snow/snowflake${start}.svg");
             animation-duration: ${finalSpeed}s, ${Math.random() * (maxRotate - minRotate) + minRotate}s;
             opacity: ${Math.random()};
